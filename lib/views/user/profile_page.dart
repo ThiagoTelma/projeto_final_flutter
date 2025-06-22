@@ -33,19 +33,19 @@ class ProfilePage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.account_circle_outlined,
                       size: 120,
-                      color: Colors.amber,
+                      color: Colors.green.withOpacity(0.6),
                     ),
                     const SizedBox(height: 24),
-                    const Text(
+                    Text(
                       'Você não está logado',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black87,
+                        color: theme.primaryColor,
                       ),
                     ),
                     const SizedBox(height: 12),
@@ -108,7 +108,7 @@ class ProfilePage extends StatelessWidget {
                   child: const Icon(
                     Icons.account_circle,
                     size: 90,
-                    color: Colors.deepPurple,
+                    color: Colors.green,
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -128,7 +128,7 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            const Icon(Icons.person, color: Colors.amber),
+                            const Icon(Icons.person, color: Colors.green),
                             const SizedBox(width: 12),
                             Expanded(
                               child: Text(
@@ -161,7 +161,7 @@ class ProfilePage extends StatelessWidget {
                   height: 50,
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.amber[700],
+                      backgroundColor: theme.primaryColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),

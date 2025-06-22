@@ -35,7 +35,7 @@ class CartPage extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 16, top: 12),
                   child: CircleAvatar(
                     radius: 12,
-                    backgroundColor: Colors.orange,
+                    backgroundColor: Colors.green,
                     child: Text(
                       cartController.cartProducts
                           .fold(0, (sum, item) => sum + item.quantity)
@@ -59,7 +59,7 @@ class CartPage extends StatelessWidget {
                   Icon(
                     Icons.shopping_cart_outlined,
                     size: 100,
-                    color: theme.primaryColor.withOpacity(0.7),
+                    color: theme.primaryColor.withOpacity(0.6),
                   ),
                   const SizedBox(height: 24),
                   const Text(
@@ -83,6 +83,7 @@ class CartPage extends StatelessWidget {
                     onPressed: () {
                       Get.offAllNamed('/');
                     },
+                    color: theme.primaryColor,
                   ),
                 ],
               ),
@@ -179,10 +180,10 @@ class CartPage extends StatelessWidget {
                 children: [
                   ElevatedButton.icon(
                     onPressed: cartController.limparCarrinho,
-                    icon: const Icon(Icons.delete_outline, color: Colors.black),
+                    icon: const Icon(Icons.delete_outline, color: Colors.white),
                     label: const Text(
                       'Limpar Carrinho',
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: theme.primaryColor,
@@ -240,7 +241,7 @@ class CartPage extends StatelessWidget {
                           cartController.clearCartBadge();
                           cartController.carregandoFinalizar.value = false;
                         },
-                        backgroundColor: Colors.amber[700]!,
+                        backgroundColor: Colors.green[700]!,
                       ))),
             ),
           ],

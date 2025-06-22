@@ -17,7 +17,8 @@ class BannerCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final NumberFormat currencyFormat = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
+    final NumberFormat currencyFormat =
+        NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
     return CarouselSlider(
       options: CarouselOptions(
         height: 200,
@@ -56,7 +57,8 @@ class BannerCarousel extends StatelessWidget {
                   ),
                   errorWidget: (context, url, error) => Container(
                     color: Colors.grey[300],
-                    child: const Icon(Icons.broken_image, size: 50, color: Colors.grey),
+                    child: const Icon(Icons.broken_image,
+                        size: 50, color: Colors.grey),
                   ),
                   fadeInDuration: const Duration(milliseconds: 500),
                 ),
@@ -68,7 +70,8 @@ class BannerCarousel extends StatelessWidget {
                 left: 12,
                 right: 12,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.6),
                     borderRadius: BorderRadius.circular(8),
@@ -79,7 +82,7 @@ class BannerCarousel extends StatelessWidget {
                       Text(
                         banner.title,
                         style: const TextStyle(
-                          color: Colors.white,
+                          color: Colors.green,
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
                         ),
@@ -90,7 +93,7 @@ class BannerCarousel extends StatelessWidget {
                       Text(
                         currencyFormat.format(banner.price),
                         style: const TextStyle(
-                          color: Colors.orangeAccent,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),

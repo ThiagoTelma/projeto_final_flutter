@@ -15,10 +15,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final AuthController authController = Get.find<AuthController>();
 
-  final TextEditingController usernameController =
-      TextEditingController(text: 'johnd');
-  final TextEditingController passwordController =
-      TextEditingController(text: 'm38rmF\$');
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   Future<void> _login() async {
     final request = LoginRequestModel(
@@ -53,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('Faça o Login'),
         leading: Navigator.canPop(context)
             ? IconButton(
                 icon: const Icon(Icons.arrow_back),
@@ -72,14 +70,15 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 40),
 
               // Branding
-              const Icon(Icons.shopping_bag, size: 80, color: Colors.amber),
+              const Icon(Icons.shopping_bag,
+                  size: 80, color: Colors.green), // Changed to green
               const SizedBox(height: 16),
               const Text(
                 'Minha Loja Online',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.amber,
+                  color: Colors.green, // Changed to green
                 ),
               ),
               const SizedBox(height: 8),
@@ -87,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                 'Acesse sua conta para continuar',
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.black54,
+                  color: Colors.black54, // Kept black for readability
                 ),
               ),
 
@@ -129,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
                     icon: Icons.login,
                     isLoading: authController.carregando.value,
                     onPressed: _login,
-                    backgroundColor: Colors.amber[700]!,
+                    backgroundColor: Colors.green.shade700, // Changed to green
                   )),
 
               const SizedBox(height: 16),
@@ -138,12 +137,14 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Não tem uma conta? '),
+                  const Text(
+                      'Não tem uma conta? '), // Kept black for readability
                   TextButton(
                     onPressed: () {
                       Get.toNamed('/signup');
                     },
-                    child: const Text('Cadastre-se'),
+                    child: const Text(
+                        'Cadastre-se'), // Uses theme's primary color by default
                   ),
                 ],
               ),
@@ -155,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Get.offAllNamed('/');
                 },
-                color: Colors.amber[700]!,
+                color: Colors.green.shade700, // Changed to green
               ),
             ],
           ),

@@ -13,7 +13,8 @@ class MainNavigationPage extends StatefulWidget {
 }
 
 class _MainNavigationPageState extends State<MainNavigationPage> {
-  final MainNavigationController navigationController = Get.put(MainNavigationController());
+  final MainNavigationController navigationController =
+      Get.put(MainNavigationController());
   final CartController cartController = Get.find<CartController>();
 
   // GlobalKey do AddToCartIcon
@@ -59,7 +60,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
       child: Scaffold(
         appBar: AppBar(
           title: Obx(() => Text(navigationController.selectedIndex.value == 0
-              ? 'Loja Virtual'
+              ? 'Página da Loja'
               : navigationController.selectedIndex.value == 1
                   ? 'Meus Pedidos'
                   : navigationController.selectedIndex.value == 2
@@ -75,7 +76,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
                 icon: const Icon(Icons.shopping_cart),
                 badgeOptions: const BadgeOptions(
                   active: true,
-                  backgroundColor: Colors.purple,
+                  backgroundColor: Colors.green,
                 ),
               ),
             ),
@@ -92,13 +93,16 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
             type: BottomNavigationBarType.fixed,
             currentIndex: navigationController.selectedIndex.value,
             onTap: navigationController.changePage,
-            selectedItemColor: Colors.deepPurple,
+            selectedItemColor: Colors.green,
             unselectedItemColor: Colors.grey,
             items: const [
               BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(icon: Icon(Icons.receipt_long), label: 'Pedidos'),
-              BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favoritos'),
-              BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.receipt_long), label: 'Pedidos'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.favorite), label: 'Favoritos'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person), label: 'Perfil'),
             ],
           ),
         ),

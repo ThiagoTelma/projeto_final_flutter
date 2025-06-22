@@ -14,7 +14,8 @@ class FavoritesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final NumberFormat currencyFormat = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
+    final NumberFormat currencyFormat =
+        NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
     final theme = Theme.of(context);
 
     return Scaffold(
@@ -32,16 +33,16 @@ class FavoritesPage extends StatelessWidget {
                   Icon(
                     Icons.lock_outline,
                     size: 100,
-                    color: theme.primaryColor.withOpacity(0.7),
+                    color: theme.primaryColor.withOpacity(0.6),
                   ),
                   const SizedBox(height: 24),
-                  const Text(
+                  Text(
                     'Você não está logado',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black87,
+                      color: theme.primaryColor,
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -50,7 +51,8 @@ class FavoritesPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.black54,
+                      color: Colors
+                          .black54, // Kept black for this specific message for readability
                     ),
                   ),
                   const SizedBox(height: 36),
@@ -94,16 +96,16 @@ class FavoritesPage extends StatelessWidget {
                   Icon(
                     Icons.favorite_border,
                     size: 100,
-                    color: theme.primaryColor.withOpacity(0.7),
+                    color: theme.primaryColor.withOpacity(0.6),
                   ),
                   const SizedBox(height: 24),
-                  const Text(
+                  Text(
                     'Nenhum favorito encontrado',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black87,
+                      color: theme.primaryColor,
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -112,7 +114,7 @@ class FavoritesPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.black45,
+                      color: Colors.black45, // Kept black for readability
                     ),
                   ),
                   const SizedBox(height: 36),
@@ -129,7 +131,8 @@ class FavoritesPage extends StatelessWidget {
           separatorBuilder: (context, index) => const SizedBox(height: 6),
           itemBuilder: (context, index) {
             final produtoId = favoritos[index];
-            final produto = Get.find<ProductController>().getProdutoById(produtoId);
+            final produto =
+                Get.find<ProductController>().getProdutoById(produtoId);
 
             if (produto == null) {
               return ListTile(
@@ -186,7 +189,8 @@ class FavoritesPage extends StatelessWidget {
                                   style: GoogleFonts.montserrat(
                                     fontSize: 13,
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.black87,
+                                    color: Colors
+                                        .black87, // Kept black for readability
                                   ),
                                 ),
                                 const SizedBox(height: 6),
@@ -202,7 +206,8 @@ class FavoritesPage extends StatelessWidget {
                             ),
                           ),
                           IconButton(
-                            icon: Icon(Icons.delete_outline, color: theme.primaryColor),
+                            icon: Icon(Icons.delete_outline,
+                                color: theme.primaryColor),
                             onPressed: () {
                               favoritosController.toggleFavorito(produtoId);
 
@@ -214,7 +219,8 @@ class FavoritesPage extends StatelessWidget {
                                 snackPosition: SnackPosition.TOP,
                                 margin: const EdgeInsets.all(16),
                                 borderRadius: 12,
-                                icon: const Icon(Icons.favorite_border, color: Colors.white),
+                                icon: const Icon(Icons.favorite_border,
+                                    color: Colors.white),
                                 duration: const Duration(seconds: 2),
                               );
                             },

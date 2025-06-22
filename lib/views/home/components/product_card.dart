@@ -137,7 +137,7 @@ class ProductCard extends StatelessWidget {
                               isFavorito
                                   ? Icons.favorite
                                   : Icons.favorite_border,
-                              color: isFavorito ? Colors.red : Colors.white,
+                              color: isFavorito ? Colors.red : Colors.grey,
                               size: 18,
                             ),
                           ),
@@ -148,8 +148,9 @@ class ProductCard extends StatelessWidget {
                     /// Preço
                     Text(
                       currencyFormat.format(product.price),
-                      style: const TextStyle(
-                        color: Colors.orange,
+                      style: TextStyle(
+                        color: Colors.green
+                            .shade800, // Changed price color to dark green
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
                       ),
@@ -167,13 +168,11 @@ class ProductCard extends StatelessWidget {
                                 product, 1);
                             cartAnimationMethod(imageGk);
                           },
-                          child: const Padding(
-                            padding: EdgeInsets.all(4),
-                            child: Icon(
-                              Icons.add_shopping_cart,
-                              color: Colors.orange,
-                              size: 18,
-                            ),
+                          child: Icon(
+                            Icons.add_shopping_cart,
+                            color: Colors
+                                .green.shade700, // Changed icon color to green
+                            size: 18,
                           ),
                         ),
                       ),

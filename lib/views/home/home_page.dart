@@ -56,7 +56,9 @@ class _HomePageState extends State<HomePage> {
                       child: CategoryTile(
                         category: categoria,
                         onTap: () {
-                          Get.toNamed('/category/${Uri.encodeComponent(categoria)}');
+                          // Pass the original category name to the route, as the API expects it
+                          Get.toNamed(
+                              '/category/${Uri.encodeComponent(categoria)}');
                         },
                       ),
                     );

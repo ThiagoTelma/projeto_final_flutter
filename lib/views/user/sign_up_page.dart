@@ -106,14 +106,15 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(height: 15),
 
               // Branding
-              const Icon(Icons.shopping_bag, size: 80, color: Colors.amber),
+              const Icon(Icons.shopping_bag,
+                  size: 80, color: Colors.green), // Changed to green
               const SizedBox(height: 16),
               const Text(
                 'Minha Loja Online',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.amber,
+                  color: Colors.green, // Changed to green
                 ),
               ),
               const SizedBox(height: 8),
@@ -121,7 +122,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 'Crie sua conta para começar',
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.black54,
+                  color: Colors.black54, // Kept black for readability
                 ),
               ),
 
@@ -173,13 +174,17 @@ class _SignUpPageState extends State<SignUpPage> {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton.icon(
-                  icon: const Icon(Icons.person_add, color: Colors.black),
+                  icon: const Icon(Icons.person_add,
+                      color: Colors.white), // Changed to white
                   label: _isLoading
-                      ? const CircularProgressIndicator(color: Colors.black)
+                      ? const CircularProgressIndicator(
+                          color: Colors.white) // Changed to white
                       : const Text('Cadastrar',
-                          style: TextStyle(fontSize: 16, color: Colors.black)),
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white)), // Changed to white
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.amber[700],
+                    backgroundColor: Colors.green.shade700, // Changed to green
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -194,12 +199,14 @@ class _SignUpPageState extends State<SignUpPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Já tem uma conta? '),
+                  const Text(
+                      'Já tem uma conta? '), // Kept black for readability
                   TextButton(
                     onPressed: () {
                       Get.toNamed('/login');
                     },
-                    child: const Text('Entrar'),
+                    child: const Text(
+                        'Entrar'), // Uses theme's primary color by default
                   ),
                 ],
               ),
@@ -211,7 +218,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 onPressed: () {
                   Get.offAllNamed('/');
                 },
-                color: Colors.amber[700]!,
+                color: Colors.green.shade700, // Changed to green
               ),
             ],
           ),

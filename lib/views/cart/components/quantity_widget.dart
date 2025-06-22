@@ -55,7 +55,7 @@ class QuantityWidget extends StatelessWidget {
           ),
           _QuantityButton(
             icon: Icons.add,
-            color: Colors.amber[700]!,
+            color: Colors.green[700]!,
             onPressed: () {
               int resultCount = value + 1;
 

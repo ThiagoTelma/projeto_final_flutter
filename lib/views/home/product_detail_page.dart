@@ -41,7 +41,10 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             return IconButton(
               icon: Icon(
                 isFavorito ? Icons.favorite : Icons.favorite_border,
-                color: isFavorito ? Colors.red : Colors.grey[700],
+                color: isFavorito
+                    ? Colors.red
+                    : Colors
+                        .white, // Changed to white to match app bar foregound
               ),
               onPressed: () {
                 if (!isLogado) {
@@ -124,7 +127,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           currencyFormat
                               .format(widget.product.price * quantidade),
                           style: TextStyle(
-                            color: Colors.amber[700],
+                            color:
+                                Colors.green.shade800, // Changed to dark green
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
@@ -198,8 +202,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             height: 50,
             child: ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.amber[700],
-                foregroundColor: Colors.black,
+                backgroundColor: Colors.green.shade700, // Changed to green
+                foregroundColor: Colors.white, // Changed to white
                 textStyle:
                     const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 shape: RoundedRectangleBorder(
@@ -221,7 +225,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   'Itens adicionados ao carrinho',
                   '${quantidade}x ${widget.product.title} foram adicionados ao carrinho.',
                   colorText: Colors.white,
-                  backgroundColor: Colors.green[900],
+                  backgroundColor:
+                      Colors.green.shade900, // Changed to dark green
                   snackPosition: SnackPosition.TOP,
                   margin: const EdgeInsets.all(16),
                   borderRadius: 12,

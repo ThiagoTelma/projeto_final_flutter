@@ -24,7 +24,8 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
   final _passwordController = TextEditingController();
   final _firstnameController = TextEditingController();
   final _lastnameController = TextEditingController();
-  final _phoneController = MaskedTextController(mask: '(00)00000-0000', text: '41999999999');
+  final _phoneController =
+      MaskedTextController(mask: '(00)00000-0000', text: '41999999999');
   final _cityController = TextEditingController();
   final _streetController = TextEditingController();
   final _numberController = TextEditingController();
@@ -70,8 +71,10 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
           foregroundColor: Colors.white,
           bottom: const TabBar(
             indicatorColor: Colors.white,
-            labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
-            unselectedLabelStyle: TextStyle(fontSize: 14, color: Colors.white70),
+            labelStyle: TextStyle(
+                fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+            unselectedLabelStyle:
+                TextStyle(fontSize: 14, color: Colors.white70),
             unselectedLabelColor: Colors.white70,
             tabs: [
               Tab(text: 'Perfil', icon: Icon(Icons.person)),
@@ -98,7 +101,7 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
               style: TextStyle(color: Colors.black),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.amber[700],
+              backgroundColor: Colors.green[700],
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -259,7 +262,8 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
       ),
     );
 
-    final success = await userController.updateUserReturningSuccess(updatedUser);
+    final success =
+        await userController.updateUserReturningSuccess(updatedUser);
 
     if (success) {
       Get.snackbar(

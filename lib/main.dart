@@ -8,13 +8,10 @@ import './views/views.dart';
 import 'bindings/initial_binding.dart';
 
 Future<void> main() async {
-  // Registrar os services globais
-
   WidgetsFlutterBinding.ensureInitialized();
 
   await GetStorage.init(); // Inicializa o GetStorage
-  // Inicializa locale para pt_BR
-  await initializeDateFormatting('pt_BR', null);
+  await initializeDateFormatting('pt_BR', null); // Inicializa locale para pt_BR
   runApp(const MyApp());
 }
 
@@ -28,33 +25,35 @@ class MyApp extends StatelessWidget {
       title: 'Loja de Produtos',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.amber), // Alterado para amarelo
+          seedColor: Colors.green.shade800, // Changed to dark green
+        ),
         useMaterial3: true,
         primaryColor: Colors
-            .amber[700], // Um tom mais escuro de amarelo para a cor primária
+            .green.shade800, // A darker shade of green for the primary color
         scaffoldBackgroundColor:
-            Colors.white, // Fundo branco para a maioria das telas
+            Colors.white, // White background for most screens
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.amber[700], // AppBar em amarelo
-          foregroundColor: Colors.black, // Cor do texto e ícones na AppBar
+          backgroundColor: Colors.green.shade900, // AppBar in a very dark green
+          foregroundColor:
+              Colors.white, // Text and icon color on AppBar to white
           elevation: 4,
           centerTitle: true,
           titleTextStyle: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Colors.black, // Título da AppBar em preto para contraste
+            color: Colors.white, // AppBar title in white for contrast
           ),
-          iconTheme: const IconThemeData(
-              color: Colors.black), // Ícones da AppBar em preto
+          iconTheme:
+              const IconThemeData(color: Colors.white), // AppBar icons in white
         ),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.amber[700], // FAB em amarelo
-          foregroundColor: Colors.black, // Ícone do FAB em preto
+          backgroundColor: Colors.green.shade700, // FAB in green
+          foregroundColor: Colors.white, // FAB icon in white
           elevation: 6,
           shape: const StadiumBorder(),
         ),
         cardTheme: CardThemeData(
-          color: Colors.white, // Cards em branco
+          color: Colors.white, // Cards in white
           elevation: 6,
           margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           shape: RoundedRectangleBorder(
@@ -69,13 +68,13 @@ class MyApp extends StatelessWidget {
               fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black87),
         ),
         chipTheme: ChipThemeData(
-          backgroundColor: Colors.amber[700], // Chips em amarelo
-          selectedColor: Colors
-              .orange, // Cor de seleção para chips (opcional, pode ser ajustado)
+          backgroundColor: Colors.green.shade700, // Chips in green
+          selectedColor:
+              Colors.lightGreen, // Selection color for chips (optional)
           secondarySelectedColor:
-              Colors.orange, // Cor secundária de seleção (opcional)
+              Colors.lightGreen, // Secondary selection color (optional)
           labelStyle:
-              const TextStyle(color: Colors.black), // Texto dos chips em preto
+              const TextStyle(color: Colors.white), // Chip text in white
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
@@ -83,22 +82,19 @@ class MyApp extends StatelessWidget {
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: Colors
-              .amber[700], // Cor do ícone selecionado da BottomNavigationBar
-          unselectedItemColor: Colors.grey, // Cor do ícone não selecionado
+              .green.shade800, // Selected icon color for BottomNavigationBar
+          unselectedItemColor: Colors.grey, // Unselected icon color
+          backgroundColor: Colors.white, // Set background to white
+          elevation: 8,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor:
-                Colors.amber[700], // Cor de fundo dos botões elevados
-            foregroundColor:
-                Colors.black, // Cor do texto e ícones nos botões elevados
+                Colors.green.shade700, // Background color for elevated buttons
+            foregroundColor: Colors.white, // Text and icons on elevated buttons
           ),
         ),
       ),
-
-      // 👉 TIRA ISSO:
-      // home: MainNavigationPage(),
-
       initialRoute: '/',
       getPages: [
         GetPage(

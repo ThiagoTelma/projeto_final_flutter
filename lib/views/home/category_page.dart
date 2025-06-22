@@ -2,12 +2,70 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import './../../controllers/controllers.dart';
-import '../views.dart';
+import '../views.dart'; // Ensure this import is present for ProductCard
 
 class CategoryPage extends StatelessWidget {
   CategoryPage({super.key});
 
   final ProductController categoryController = Get.find<ProductController>();
+
+  // Helper to translate category names (duplicate from CategoryTile for consistency)
+  String _getCategoryNameInPortuguese(String englishName) {
+    switch (englishName.toLowerCase()) {
+      case 'smartphones':
+        return 'Celulares';
+      case 'beauty':
+        return 'Beleza';
+      case 'kitchen-accessories':
+        return 'Cozinha';
+      case 'mobile-accessories':
+        return 'Acessorios de Celular';
+      case 'sports-accessories':
+        return 'Acessorios de Esportes';
+      case 'laptops':
+        return 'Notebooks';
+      case 'vehicle':
+        return 'Veículos';
+      case 'fragrances':
+        return 'Perfumaria';
+      case 'skincare':
+        return 'Cuidados com a Pele';
+      case 'groceries':
+        return 'Mercearia';
+      case 'home-decoration':
+        return 'Decoração de Casa';
+      case 'furniture':
+        return 'Móveis';
+      case 'tops':
+        return 'Blusas';
+      case 'womens-dresses':
+        return 'Vestidos Femininos';
+      case 'womens-shoes':
+        return 'Sapatos Femininos';
+      case 'mens-shirts':
+        return 'Camisas Masculinas';
+      case 'mens-shoes':
+        return 'Sapatos Masculinos';
+      case 'mens-watches':
+        return 'Relógios Masculinos';
+      case 'womens-watches':
+        return 'Relógios Femininos';
+      case 'womens-bags':
+        return 'Bolsas Femininas';
+      case 'womens-jewellery':
+        return 'Jóias Femininas';
+      case 'sunglasses':
+        return 'Óculos de Sol';
+      case 'automotive':
+        return 'Automotivo';
+      case 'motorcycle':
+        return 'Motocicletas';
+      case 'lighting':
+        return 'Iluminação';
+      default:
+        return englishName; // Returns original if no translation found
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +76,8 @@ class CategoryPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Categoria: $categoria'),
+        title: Text(
+            'Categoria: ${_getCategoryNameInPortuguese(categoria)}'), // Use translated name for title
       ),
       body: Obx(() {
         if (categoryController.carregando.value) {
@@ -41,7 +100,7 @@ class CategoryPage extends StatelessWidget {
           itemBuilder: (context, index) {
             final produto = categoryController.productList[index];
             return ProductCard(
-              cartAnimationMethod: (p0) {},
+              cartAnimationMethod: (p0) {}, // Placeholder for now
               product: produto,
               onTap: () {
                 Navigator.push(
