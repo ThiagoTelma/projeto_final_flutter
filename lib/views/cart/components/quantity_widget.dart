@@ -33,7 +33,8 @@ class QuantityWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           _QuantityButton(
-            icon: !isRemovable || value > 1 ? Icons.remove : Icons.delete_forever,
+            icon:
+                !isRemovable || value > 1 ? Icons.remove : Icons.delete_forever,
             color: !isRemovable || value > 1 ? Colors.grey : Colors.red,
             onPressed: () {
               if (value == 1 && !isRemovable) return;
@@ -54,7 +55,7 @@ class QuantityWidget extends StatelessWidget {
           ),
           _QuantityButton(
             icon: Icons.add,
-            color: Colors.deepPurple,
+            color: Colors.amber[700]!,
             onPressed: () {
               int resultCount = value + 1;
 

@@ -33,10 +33,10 @@ class ProfilePage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.account_circle_outlined,
                       size: 120,
-                      color: theme.primaryColor.withOpacity(0.7),
+                      color: Colors.amber,
                     ),
                     const SizedBox(height: 24),
                     const Text(
@@ -128,7 +128,7 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            const Icon(Icons.person, color: Colors.deepPurple),
+                            const Icon(Icons.person, color: Colors.amber),
                             const SizedBox(width: 12),
                             Expanded(
                               child: Text(
@@ -141,7 +141,7 @@ class ProfilePage extends StatelessWidget {
                         const Divider(height: 24),
                         Row(
                           children: [
-                            const Icon(Icons.email, color: Colors.deepPurple),
+                            const Icon(Icons.email, color: Colors.amber),
                             const SizedBox(width: 12),
                             Expanded(
                               child: Text(
@@ -161,7 +161,7 @@ class ProfilePage extends StatelessWidget {
                   height: 50,
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurple,
+                      backgroundColor: Colors.amber[700],
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),

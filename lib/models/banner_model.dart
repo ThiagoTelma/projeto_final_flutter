@@ -27,7 +27,8 @@ class BannerModel {
       id: json['id'],
       title: json['title'],
       price: (json['price'] as num).toDouble(),
-      imageUrl: json['image'],
+      imageUrl: json[
+          'thumbnail'], // Alterado de 'image' para 'thumbnail' da DummyJSON
     );
   }
 

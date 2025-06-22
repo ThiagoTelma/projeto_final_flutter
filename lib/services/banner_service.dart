@@ -10,8 +10,10 @@ class BannerService {
     final response = await http.get(Uri.parse('${Common.baseUrl}/products'));
 
     if (response.statusCode == 200) {
-      final List<dynamic> data = json.decode(response.body);
-      final List<ProductModel> products = data.map((json) => ProductModel.fromJson(json)).toList();
+      final List<dynamic> data =
+          json.decode(response.body)['products']; // Adicionar ['products']
+      final List<ProductModel> products =
+          data.map((json) => ProductModel.fromJson(json)).toList();
 
       // Embaralha a lista para ter produtos aleatórios
       products.shuffle(Random());
@@ -23,7 +25,8 @@ class BannerService {
       final banners = selectedProducts.map((product) {
         return BannerModel(
           id: product.id,
-          imageUrl: product.image,
+          imageUrl: product
+              .image, // ProductModel.image agora vem do 'thumbnail' da DummyJSON
           title: product.title,
           price: product.price,
         );

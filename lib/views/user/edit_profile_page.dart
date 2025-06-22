@@ -92,13 +92,13 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(16),
           child: ElevatedButton.icon(
-            icon: const Icon(Icons.save, color: Colors.white),
+            icon: const Icon(Icons.save, color: Colors.black),
             label: const Text(
               'Salvar Alterações',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: theme.primaryColor,
+              backgroundColor: Colors.amber[700],
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),

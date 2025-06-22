@@ -19,14 +19,21 @@ class ProductModel {
       required this.rating});
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
+    // A DummyJSON retorna 'rating' como double diretamente no objeto do produto.
+    // E 'stock' como int, que podemos usar para 'count'.
+    final double rate = (json['rating'] as num).toDouble();
+    final int count =
+        (json['stock'] as num).toInt(); // Usando 'stock' como 'count'
+
     return ProductModel(
         id: json['id'],
         title: json['title'],
         price: (json['price'] as num).toDouble(),
         description: json['description'],
         category: json['category'],
-        image: json['image'],
-        rating: RatingModel.fromJson(json['rating']));
+        image: json['thumbnail'], // Continua pegando do 'thumbnail'
+        rating: RatingModel(
+            rate: rate, count: count)); // Constrói RatingModel diretamente
   }
 
   Map<String, dynamic> toJson() {

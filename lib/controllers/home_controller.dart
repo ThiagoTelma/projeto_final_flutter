@@ -1,3 +1,4 @@
+// lib/controllers/home_controller.dart
 import 'package:get/get.dart';
 
 import './../repository/repository.dart';
@@ -15,7 +16,7 @@ class HomeController extends GetxController {
   });
 
   final banners = <BannerModel>[].obs;
-  final categories = <String>[].obs;
+  final categories = <String>[].obs; // É uma lista de String aqui
   final featuredProducts = <ProductModel>[].obs;
 
   final isLoading = false.obs;
@@ -38,7 +39,7 @@ class HomeController extends GetxController {
 
       /// Categories
       final categoriesApi = await categoryRepository.fetchCategories();
-      categories.assignAll(categoriesApi);
+      categories.assignAll(categoriesApi); // Atribui strings diretamente aqui
 
       /// Featured Products
       final productsApi = await productRepository.fetchProducts();

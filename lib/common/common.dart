@@ -1,3 +1,4 @@
 class Common {
-  static const String baseUrl = 'https://fakestoreapi.com';
+  static const String baseUrl =
+      'https://dummyjson.com'; // Alterado para DummyJSON API
 }

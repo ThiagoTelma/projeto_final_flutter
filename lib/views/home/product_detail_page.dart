@@ -17,9 +17,11 @@ class ProductDetailPage extends StatefulWidget {
 }
 
 class _ProductDetailPageState extends State<ProductDetailPage> {
-  final NumberFormat currencyFormat = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
+  final NumberFormat currencyFormat =
+      NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
   final CartController cartController = Get.find<CartController>();
-  final FavoritosController favoritosController = Get.find<FavoritosController>();
+  final FavoritosController favoritosController =
+      Get.find<FavoritosController>();
   final AuthController authController = Get.find<AuthController>();
 
   bool get isLogado => authController.logado.value;
@@ -34,11 +36,12 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         actions: [
           /// Favoritar no AppBar
           Obx(() {
-            final isFavorito = favoritosController.isFavorito(widget.product.id);
+            final isFavorito =
+                favoritosController.isFavorito(widget.product.id);
             return IconButton(
               icon: Icon(
                 isFavorito ? Icons.favorite : Icons.favorite_border,
-                color: isFavorito ? Colors.red : Colors.white,
+                color: isFavorito ? Colors.red : Colors.grey[700],
               ),
               onPressed: () {
                 if (!isLogado) {
@@ -70,7 +73,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             child: AspectRatio(
               aspectRatio: 1.2, // bom para tela de detalhe
               child: ClipRRect(
-                borderRadius: const BorderRadius.vertical(bottom: Radius.circular(12)),
+                borderRadius:
+                    const BorderRadius.vertical(bottom: Radius.circular(12)),
                 child: CachedNetworkImage(
                   imageUrl: widget.product.image,
                   fit: BoxFit.cover,
@@ -83,7 +87,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   ),
                   errorWidget: (context, url, error) => Container(
                     color: Colors.grey[300],
-                    child: const Icon(Icons.broken_image, size: 50, color: Colors.grey),
+                    child: const Icon(Icons.broken_image,
+                        size: 50, color: Colors.grey),
                   ),
                   fadeInDuration: const Duration(milliseconds: 300),
                 ),
@@ -116,9 +121,10 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       children: [
                         /// Preço
                         Text(
-                          currencyFormat.format(widget.product.price * quantidade),
-                          style: const TextStyle(
-                            color: Colors.deepPurple,
+                          currencyFormat
+                              .format(widget.product.price * quantidade),
+                          style: TextStyle(
+                            color: Colors.amber[700],
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
@@ -192,9 +198,10 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             height: 50,
             child: ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurple,
-                foregroundColor: Colors.white,
-                textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                backgroundColor: Colors.amber[700],
+                foregroundColor: Colors.black,
+                textStyle:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),

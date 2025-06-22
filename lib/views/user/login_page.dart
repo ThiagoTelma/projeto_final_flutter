@@ -15,8 +15,10 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final AuthController authController = Get.find<AuthController>();
 
-  final TextEditingController usernameController = TextEditingController(text: 'johnd');
-  final TextEditingController passwordController = TextEditingController(text: 'm38rmF\$');
+  final TextEditingController usernameController =
+      TextEditingController(text: 'johnd');
+  final TextEditingController passwordController =
+      TextEditingController(text: 'm38rmF\$');
 
   Future<void> _login() async {
     final request = LoginRequestModel(
@@ -33,7 +35,9 @@ class _LoginPageState extends State<LoginPage> {
       // Falha → mostra erro
       Get.snackbar(
         'Erro de login',
-        authController.erro.value.isNotEmpty ? authController.erro.value : 'Falha ao fazer login.',
+        authController.erro.value.isNotEmpty
+            ? authController.erro.value
+            : 'Falha ao fazer login.',
         colorText: Colors.white,
         backgroundColor: Colors.redAccent,
         snackPosition: SnackPosition.TOP,
@@ -68,14 +72,14 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 40),
 
               // Branding
-              const Icon(Icons.shopping_bag, size: 80, color: Colors.deepPurple),
+              const Icon(Icons.shopping_bag, size: 80, color: Colors.amber),
               const SizedBox(height: 16),
               const Text(
                 'Minha Loja Online',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple,
+                  color: Colors.amber,
                 ),
               ),
               const SizedBox(height: 8),
@@ -125,6 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                     icon: Icons.login,
                     isLoading: authController.carregando.value,
                     onPressed: _login,
+                    backgroundColor: Colors.amber[700]!,
                   )),
 
               const SizedBox(height: 16),
@@ -150,6 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Get.offAllNamed('/');
                 },
+                color: Colors.amber[700]!,
               ),
             ],
           ),

@@ -50,7 +50,8 @@ class _SignUpPageState extends State<SignUpPage> {
       _isLoading = false;
     });
 
-    if (usuarioController.erro.value.isEmpty && usuarioController.user.value != null) {
+    if (usuarioController.erro.value.isEmpty &&
+        usuarioController.user.value != null) {
       Get.snackbar(
         'Cadastro realizado',
         'Sua conta foi criada com sucesso!',
@@ -105,14 +106,14 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(height: 15),
 
               // Branding
-              const Icon(Icons.shopping_bag, size: 80, color: Colors.deepPurple),
+              const Icon(Icons.shopping_bag, size: 80, color: Colors.amber),
               const SizedBox(height: 16),
               const Text(
                 'Minha Loja Online',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple,
+                  color: Colors.amber,
                 ),
               ),
               const SizedBox(height: 8),
@@ -172,13 +173,13 @@ class _SignUpPageState extends State<SignUpPage> {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton.icon(
-                  icon: const Icon(Icons.person_add, color: Colors.white),
+                  icon: const Icon(Icons.person_add, color: Colors.black),
                   label: _isLoading
-                      ? const CircularProgressIndicator(color: Colors.white)
+                      ? const CircularProgressIndicator(color: Colors.black)
                       : const Text('Cadastrar',
-                          style: TextStyle(fontSize: 16, color: Colors.white)),
+                          style: TextStyle(fontSize: 16, color: Colors.black)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepPurple,
+                    backgroundColor: Colors.amber[700],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -210,6 +211,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 onPressed: () {
                   Get.offAllNamed('/');
                 },
+                color: Colors.amber[700]!,
               ),
             ],
           ),

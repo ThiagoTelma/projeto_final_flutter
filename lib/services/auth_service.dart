@@ -17,7 +17,8 @@ class AuthService {
       return LoginResponseModel.fromJson(data);
     } else {
       // Tentativa de buscar usuário localmente
-      final localUser = await getUserByNameAndPassword(request.username, request.password);
+      final localUser =
+          await getUserByNameAndPassword(request.username, request.password);
       if (localUser != null) {
         return LoginResponseModel(
           token:
@@ -30,7 +31,8 @@ class AuthService {
     }
   }
 
-  Future<UserModel?> getUserByNameAndPassword(String userName, String password) async {
+  Future<UserModel?> getUserByNameAndPassword(
+      String userName, String password) async {
     final db = await AppDatabase().database;
     final maps = await db.query(
       'users',
