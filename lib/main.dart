@@ -25,35 +25,35 @@ class MyApp extends StatelessWidget {
       title: 'Loja de Produtos',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.green.shade800, // Changed to dark green
+          seedColor: Colors.green.shade800, 
         ),
         useMaterial3: true,
         primaryColor: Colors
-            .green.shade800, // A darker shade of green for the primary color
+            .green.shade800,
         scaffoldBackgroundColor:
-            Colors.white, // White background for most screens
+            Colors.white,
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.green.shade900, // AppBar in a very dark green
+          backgroundColor: Colors.green.shade900, 
           foregroundColor:
-              Colors.white, // Text and icon color on AppBar to white
+              Colors.white,
           elevation: 4,
           centerTitle: true,
           titleTextStyle: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: Colors.white, // AppBar title in white for contrast
+            color: Colors.white, 
           ),
           iconTheme:
-              const IconThemeData(color: Colors.white), // AppBar icons in white
+              const IconThemeData(color: Colors.white), 
         ),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.green.shade700, // FAB in green
-          foregroundColor: Colors.white, // FAB icon in white
+          backgroundColor: Colors.green.shade700, 
+          foregroundColor: Colors.white, 
           elevation: 6,
           shape: const StadiumBorder(),
         ),
         cardTheme: CardThemeData(
-          color: Colors.white, // Cards in white
+          color: Colors.white, 
           elevation: 6,
           margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           shape: RoundedRectangleBorder(
@@ -68,13 +68,13 @@ class MyApp extends StatelessWidget {
               fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black87),
         ),
         chipTheme: ChipThemeData(
-          backgroundColor: Colors.green.shade700, // Chips in green
+          backgroundColor: Colors.green.shade700,
           selectedColor:
-              Colors.lightGreen, // Selection color for chips (optional)
+              Colors.lightGreen, 
           secondarySelectedColor:
-              Colors.lightGreen, // Secondary selection color (optional)
+              Colors.lightGreen, 
           labelStyle:
-              const TextStyle(color: Colors.white), // Chip text in white
+              const TextStyle(color: Colors.white), 
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
@@ -82,16 +82,16 @@ class MyApp extends StatelessWidget {
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: Colors
-              .green.shade800, // Selected icon color for BottomNavigationBar
-          unselectedItemColor: Colors.grey, // Unselected icon color
-          backgroundColor: Colors.white, // Set background to white
+              .green.shade800,
+          unselectedItemColor: Colors.grey, 
+          backgroundColor: Colors.white,
           elevation: 8,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor:
-                Colors.green.shade700, // Background color for elevated buttons
-            foregroundColor: Colors.white, // Text and icons on elevated buttons
+                Colors.green.shade700, 
+            foregroundColor: Colors.white, 
           ),
         ),
       ),
